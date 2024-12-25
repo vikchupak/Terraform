@@ -1,4 +1,4 @@
-Terraform and AWS CLI are both tools used to manage AWS resources, but they serve different purposes and operate in distinct ways.
+`Terraform` and `AWS CLI` are both tools used to manage AWS resources, but they serve different purposes and operate in distinct ways.
 
 - Terraform
   - A **declarative Infrastructure-as-Code (IaC)** tool.
