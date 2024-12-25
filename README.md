@@ -1,2 +1,2 @@
 # Terraform
-Terraform staff is here
+Terraform stuff is here
