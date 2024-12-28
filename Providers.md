@@ -1,5 +1,6 @@
 - A source is the location where to fetch data from.
 - A resource is the actual infrastructure object created.
+  - https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ami
 
 In Terraform, providers are plugins that enable interaction with APIs of various services, platforms, or systems. They are essential because they manage the resources defined in Terraform configuration files. Providers are responsible for understanding API interactions and exposing resources through Terraform.
 
