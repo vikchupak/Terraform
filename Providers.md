@@ -48,10 +48,12 @@ resource "aws_subnet" "terraform-subnet" {
   availability_zone = "eu-central-1a"
 }
 
+# Get existing data
 data "aws_vpc" "existing_vpc" {
   default = true
 }
 
+# Use existing data
 resource "aws_subnet" "terraform-subnet-2" {
   vpc_id = data.aws_vpc.existing_vpc.id
   cidr_block = "172.32.48.0/20"
