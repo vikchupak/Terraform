@@ -3,7 +3,7 @@
 Providers attributes:
 - A `resource` is the actual infrastructure object created.
   - https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ami
-- A `data source` is a way to fetch metadata about existing resources.
+- A `data` (data source) is a way to fetch metadata about existing resources.
 
 In Terraform, providers are plugins that enable interaction with APIs of various services, platforms, or systems. They are essential because they manage the resources defined in Terraform configuration files. Providers are responsible for understanding API interactions and exposing resources through Terraform.
 
