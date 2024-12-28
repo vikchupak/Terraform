@@ -34,8 +34,14 @@ provider "linode" {
 }
 
 # Create a VPC
-resource "aws_vpc" "example" {
+# terraform-vpc is a name we give a resource inside terraform
+resource "aws_vpc" "terraform-vpc" {
   cidr_block = "10.0.0.0/16"
+}
+
+resource "aws_subnet" "terraform-subnet" {
+  vpc_id = aws_vpc.terraform-vpc.id
+  cidr_block = "10.0.10.0/24"
 }
 ```
 
@@ -43,4 +49,9 @@ After providers defined we have to install them:
 ```bash
 # Where this command is run from is important
 terraform init
+```
+
+Create defined resources
+```bash
+terraform apply
 ```
