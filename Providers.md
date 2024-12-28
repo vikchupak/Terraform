@@ -71,3 +71,8 @@ Create/update/remove defined resources
 ```bash
 terraform apply
 ```
+
+Other way to delete a resource, but it causes unsync between terraform files and actual resources
+```bash
+terraform destroy -target aws_subnet.terraform-subnet-2
+```
