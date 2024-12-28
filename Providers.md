@@ -69,10 +69,16 @@ terraform init
 
 Create/update/remove defined resources
 ```bash
-terraform apply
+terraform apply [-auto-approve]
 ```
 
 Other way to delete a resource, but it causes unsync between terraform files and actual resources
 ```bash
-terraform destroy -target aws_subnet.terraform-subnet-2
+terraform destroy [-target aws_subnet.terraform-subnet-2]
+# If the target is NOT set then all resouces in terraform file will be deleted in correct order
+```
+
+Show changes to apply
+```bash
+terraform plan
 ```
