@@ -1,6 +1,9 @@
-- A source is the location where to fetch data from.
-- A resource is the actual infrastructure object created.
+- A `source` is the location where to fetch data from (repository).
+
+Providers attributes:
+- A `resource` is the actual infrastructure object created.
   - https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ami
+- A `data source` is a way to fetch metadata about existing resources.
 
 In Terraform, providers are plugins that enable interaction with APIs of various services, platforms, or systems. They are essential because they manage the resources defined in Terraform configuration files. Providers are responsible for understanding API interactions and exposing resources through Terraform.
 
@@ -42,6 +45,17 @@ resource "aws_vpc" "terraform-vpc" {
 resource "aws_subnet" "terraform-subnet" {
   vpc_id = aws_vpc.terraform-vpc.id
   cidr_block = "10.0.10.0/24"
+  availability_zone = "eu-central-1a"
+}
+
+data "aws_vpc" "existing_vpc" {
+  default = true
+}
+
+resource "aws_subnet" "terraform-subnet-2" {
+  vpc_id = data.aws_vpc.existing_vpc.id
+  cidr_block = "172.32.48.0/20"
+  availability_zone = "eu-central-1a"
 }
 ```
 
