@@ -34,7 +34,7 @@ provider "linode" {
 }
 
 # Create a VPC
-# terraform-vpc is a name we give a resource inside terraform
+# terraform-vpc is a name we give the resource inside the terraform
 resource "aws_vpc" "terraform-vpc" {
   cidr_block = "10.0.0.0/16"
 }
