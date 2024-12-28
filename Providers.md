@@ -67,7 +67,7 @@ After providers defined we have to install them:
 terraform init
 ```
 
-Create/update defined resources
+Create/update/remove defined resources
 ```bash
 terraform apply
 ```
