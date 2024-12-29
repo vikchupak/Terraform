@@ -15,6 +15,7 @@ variable "subnet_cidr_block" {
 resource "aws_subnet" "terraform-subnet" {
   vpc_id = aws_vpc.terraform-vpc.id
   cidr_block = var.subnet_cidr_block
+  # cidr_block = var.subnet_cidr_block[0].cidr_block
   availability_zone = "eu-central-1a"
 }
 ```
