@@ -33,6 +33,18 @@ Show resource state
 terraform state show <resource-name>
 ```
 
+# Output state values
+
+```htc
+# Only one output value allowed per output
+output "dev-vpc-id" {
+   value = aws_vpc.development-vpc.id
+}
+output "dev-subnet-id" {
+   value = aws_vpc.dev-subnet-1.id
+}
+```
+
 # So terraform doesn't see or manage not imported resources?
 
 Correct! Terraform does not see or manage resources that have not been explicitly **imported** into its state file (`terraform.tfstate`) or defined in its configuration files (`.tf`). If a resource exists in your real infrastructure but is not part of the Terraform state, Terraform is completely unaware of its existence.
