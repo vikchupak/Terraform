@@ -68,3 +68,17 @@ resource "aws_subnet" "terraform-subnet" {
   availability_zone = var.avil_zone
 }
 ```
+
+# String interpolation
+
+```hcl
+variable "environment" {
+  default = "prod"
+}
+
+resource "aws_instance" "example" {
+  tags = {
+    Name = "${var.environment}-web-server" # String interpolation syntax
+  }
+}
+```
