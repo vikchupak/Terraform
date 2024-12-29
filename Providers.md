@@ -59,6 +59,9 @@ resource "aws_subnet" "terraform-subnet-2" {
   cidr_block = "172.32.48.0/20"
   availability_zone = "eu-central-1a"
 }
+
+user_data = file("entry-script.sh") # script to execute when the ec2 instance provisioned 
+user_data_replace_on_change = true # recreate ec2 instance on user_data change
 ```
 
 After providers defined we have to install them:
