@@ -1,3 +1,5 @@
+# Terraform variables
+
 ```hcl
 ...
 
@@ -26,3 +28,43 @@ resource "aws_subnet" "terraform-subnet" {
 - `terraform apply -var "<var-name>=<var-value>"`
 - Use `terraform.tfvars` file. Terraform automatically finds this file and implicitly applies when `terraform apply`
   - To use differently named `.tfvars` file, run `terraform apply -var-file <file-name>.tfvars`
+
+# Env variables
+
+## Use already pre-configured/pre-declared ENV vars. Like Provider-Specific ENVS
+
+https://registry.terraform.io/providers/taiidani/jenkins/latest/docs
+
+```hcl
+# Configure the Jenkins Provider
+provider "jenkins" {
+  server_url = "https://jenkins.url" # Or use JENKINS_URL env var
+  username   = "username"            # Or use JENKINS_USERNAME env var
+  password   = "password"            # Or use JENKINS_PASSWORD env var
+  ca_cert = ""                       # Or use JENKINS_CA_CERT env var
+}
+
+# Create a Jenkins job
+resource "jenkins_job" "example" {
+  # ...
+}
+```
+
+## Use custom ENV vars
+
+Using `TF_VAR_` env prefix to map the envs to terraform input variables. Without `TF_VAR_` terraform does not automatically associate them with variables in your configuration(so default value will be used if provided).
+
+```bash
+export TF_VAR_avil_zone="some-zone"
+```
+
+```hcl
+variable avil_zone {
+   default = "us-east-1"
+}
+
+resource "aws_subnet" "terraform-subnet" {
+  vpc_id = aws_vpc.terraform-vpc.id
+  availability_zone = var.avil_zone
+}
+```
