@@ -1,4 +1,4 @@
-
+# State file
 - After each apply/destroy command, terraform creates/updates `terraform.tfstate` with your real resources state.
 - `terraform.tfstate.backup` - previous state.
 
