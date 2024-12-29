@@ -35,7 +35,7 @@ terraform state show <resource-name>
 
 # Output state values
 
-```htc
+```hcl
 # Only one output value allowed per output
 output "dev-vpc-id" {
    value = aws_vpc.development-vpc.id
