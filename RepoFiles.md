@@ -1,0 +1,2 @@
+- deploy-ec2
+  - https://gitlab.com/twn-devops-bootcamp/latest/12-terraform/terraform-learn/-/blob/feature/deploy-to-ec2-default-components/main.tf?ref_type=heads
