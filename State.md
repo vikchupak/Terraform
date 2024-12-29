@@ -12,7 +12,7 @@ Implicitly refreshes the state. if `terraform.tfstate` was already created. **Wi
 terraform plan
 ```
 
-Implicitly refreshes the state. **On first execution `terraform.tfstate` is created.**\
+Implicitly refreshes the state. **On first execution `terraform.tfstate` is created.**
 ```bash
 terraform apply
 ```
