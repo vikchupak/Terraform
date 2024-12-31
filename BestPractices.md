@@ -1,0 +1,9 @@
+- Do not edit state directly, only via terraform commands
+- Use shared remote storage for state
+- Use state locking to prevent cuncurrent updates. This can be done on remote backend storage like S3 bucket. Not all backend storages support locking!
+  - TF automatically will lock state file?
+- Backup state file. Enable versioning for this
+- 1 dedicated state file per environment
+- Host TF code in own git repo
+- CI for terraform code. Test env. PR reviews.
+- Apply infrastructure changes only via CD pipeline
