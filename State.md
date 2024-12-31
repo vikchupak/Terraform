@@ -45,6 +45,19 @@ output "dev-subnet-id" {
 }
 ```
 
+# Store state to remote data store (remote backend)
+
+```hcl
+terraform {
+  required_version = ">= 0.12"
+  backend "s3" {
+    bucket = "myapp-tf-s3-bucket"
+    key = "myapp/state.tfstate"
+    region = "eu-central-1"
+  }
+}
+```
+
 # So terraform doesn't see or manage not imported resources?
 
 Correct! Terraform does not see or manage resources that have not been explicitly **imported** into its state file (`terraform.tfstate`) or defined in its configuration files (`.tf`). If a resource exists in your real infrastructure but is not part of the Terraform state, Terraform is completely unaware of its existence.
