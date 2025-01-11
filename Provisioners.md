@@ -33,7 +33,7 @@ Avoid using `user_data` or provisioners. Use config management tools like Ansibl
 
 Provisioneres are run after resource creation. To run provisioner without resource creation, we can use `null_resource`
 
-```
+```hcl
 resource "null_resource" "configure_server" {
   triggers = {
     trigger = aws_instance.myapp_server.public_ip
