@@ -1,3 +1,26 @@
+# Provisioners
+- `local-exec`
+  - Executes a command or script on the machine running Terraform (your local workstation or the Terraform host).
+  - Runs locally where Terraform is executed.
+  - When you need to perform actions locally, like triggering a script, sending notifications, or invoking APIs after a resource is created.
+  - **Executes after resource creation.**
+- `remote-exec`
+  - Executes a command or script on the target resource (e.g., a virtual machine) via SSH or WinRM.
+  - Requires a connection to the target resource (e.g., via SSH).
+  - When you need to configure a newly created instance by running remote scripts or commands.
+  - **Executes after resource creation.**
+- `file`
+  - Transfers files or directories from the local machine to a target resource (e.g., virtual machines or instances).
+  - Requires a connection setup, similar to remote-exec.
+  - When you need to copy configuration files, scripts, or other resources to a newly created instance.
+  - **Executes after resource creation.**
+- `user_data`
+  - Passes a script or cloud-init configuration to an instance when it boots. This is not a Terraform provisioner but is commonly used with resources like aws_instance.
+  - When you want to configure an instance during its initialization process (e.g., installing software, setting up services, or running scripts).
+  - **Runs at instance startup as part of the bootstrapping process.**
+  - Does not require SSH or manual interaction; the cloud provider handles execution.
+  - Often used in combination with cloud-init for more complex configurations.
+
 # Provisioners vs user_data
 
 - `user_data` is managed by a cloud provider. Terraform just passes data to the cloud provider.
