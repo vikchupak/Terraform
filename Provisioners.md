@@ -15,7 +15,7 @@
   - When you need to copy configuration files, scripts, or other resources to a newly created instance.
   - **Executes after resource creation.**
 - `user_data`
-  - Passes a script or cloud-init configuration to an instance when it boots. This is not a Terraform provisioner but is commonly used with resources like aws_instance.
+  - Passes a script or cloud-init configuration to an instance when it boots. **This is not a Terraform provisioner** but is commonly used with resources like aws_instance.
   - When you want to configure an instance during its initialization process (e.g., installing software, setting up services, or running scripts).
   - **Runs at instance startup as part of the bootstrapping process.**
   - Does not require SSH or manual interaction; the cloud provider handles execution.
