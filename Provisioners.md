@@ -28,3 +28,21 @@
   - If provisioner failes, the whole resource is marked fo delete
  
 Avoid using `user_data` or provisioners. Use config management tools like Ansible or others.
+
+# null_resource
+
+Provisioneres are run after resource creation. To run provisioner without resource creation, we can use `null_resource`
+
+```
+resource "null_resource" "configure_server" {
+  triggers = {
+    trigger = aws_instance.myapp_server.public_ip
+  }
+
+  provisioner "local-exec" {
+    working_dir = "~/ansible"
+    command = "ansible-playbook --inventory ${aws_instance.myapp_server.public_ip}, --private-key ${var.ssh_private_key} --user ec2-user ansible-play-book.yaml"
+  }
+}
+```
+
