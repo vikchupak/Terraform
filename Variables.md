@@ -31,7 +31,7 @@ resource "aws_subnet" "terraform-subnet" {
 
 # Env variables
 
-## Use already pre-configured/pre-declared ENV vars. Like Provider-Specific ENVS
+## Use `already pre-configured/pre-declared` ENV vars. Like Provider-Specific ENVs. No `TF_VAR_` prefix needed.
 
 https://registry.terraform.io/providers/taiidani/jenkins/latest/docs
 
