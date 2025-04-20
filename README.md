@@ -6,3 +6,6 @@ Official site
 
 Repository
 - https://registry.terraform.io/
+
+Installation
+- https://developer.hashicorp.com/terraform/install
