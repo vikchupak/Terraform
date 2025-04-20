@@ -8,10 +8,12 @@ Providers attributes:
 In Terraform, providers are plugins that enable interaction with APIs of various services, platforms, or systems. They are essential because they manage the resources defined in Terraform configuration files. Providers are responsible for understanding API interactions and exposing resources through Terraform.
 
 - https://registry.terraform.io/browse/providers
+- https://registry.terraform.io/providers/hashicorp/aws/latest/docs
 
+Providers must be installed, like packages in programming.
 Providers are configured in Terraform using the provider block.
-Default terraform repository `hashicorp`.
-Custom repositories must be specified explicitly.
+- Default terraform repository `hashicorp`.
+- Custom repositories must be specified explicitly.
 ```hcl
 # Configure provider sources
 terraform {
