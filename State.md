@@ -12,6 +12,8 @@ Implicitly refreshes the state. if `terraform.tfstate` was already created. **Wi
 terraform plan
 ```
 
+---
+
 Implicitly refreshes the state. **On first execution `terraform.tfstate` is created.**
 ```bash
 terraform apply
@@ -22,6 +24,15 @@ terraform apply
 ```
 terraform import aws_instance.example i-1234567890abcdef0
 ```
+
+---
+
+Destroy resources
+```bash
+terraform destroy
+```
+
+---
 
 List all resources
 ```bash
