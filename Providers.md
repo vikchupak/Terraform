@@ -1,7 +1,7 @@
 - A `source` is the location where to fetch data from (repository).
 
 Providers attributes:
-- A `resource` is the actual infrastructure object created.
+- A `resource` is the actual infrastructure entity/object created.
   - https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ami
 - A `data` (data source) is a way to fetch metadata about existing resources.
 
