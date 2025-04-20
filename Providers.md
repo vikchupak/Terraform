@@ -90,7 +90,7 @@ After providers defined we have to install them:
 terraform init
 ```
 
-Create/update/remove defined resources
+Create/update/remove defined resources in main.tf file
 ```bash
 terraform apply [-auto-approve]
 ```
