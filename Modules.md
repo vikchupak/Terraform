@@ -1,5 +1,6 @@
 Group logically related resources in modules
 
+- https://registry.terraform.io/browse/modules
 - https://gitlab.com/twn-devops-bootcamp/latest/12-terraform/terraform-learn/-/tree/feature/modules
 
 Module files
