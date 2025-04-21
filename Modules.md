@@ -14,3 +14,23 @@ Module files
 
 - `root module` is root folder's main.tf
 - `child modules` are modules in modules folder and called from other configurations
+
+---
+
+Import child module to root module
+
+```
+module "myapp-subnet" {
+  # define module source
+  source = "modules/subnet"
+
+  # pass variable values to the child module from the root module variables
+  subnet_cidr_block = var.subnet_cidr_block
+  avail_zone = var.avail_zone
+  env_prefix = var.env_prefix
+  vpc_id = aws_vpc.myapp-vpc.id
+
+  # pass variable values to the child module from the root module resource
+  default_route_table_id = aws_vpc.myapp-vpc.default_route_table_id
+}
+```
