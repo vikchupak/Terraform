@@ -9,3 +9,8 @@ Module files
 - `outputs.tf` (like exports for modules) outputs from the root module just print variables, NOT exports.  Outputs from child modules doesn't print, BUT export.
 - `variables.tf` (like arguments) Variables are passed from the root module to child modules.
 - `terraform.tfvars` (**only for the root module** and then the root passes the vars to its child modules)
+
+---
+
+- `root module` is root folder's main.tf
+- `child modules` are modules in modules folder and called from other configurations
