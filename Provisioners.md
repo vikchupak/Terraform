@@ -1,3 +1,5 @@
+Provisioners are for app config/management, which is, in general, against terraform philosophy.
+
 # Provisioners
 - `local-exec`
   - Executes a command or script on the machine running Terraform (your local workstation or the Terraform host).
