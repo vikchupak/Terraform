@@ -1,2 +1,0 @@
-- Adjust the main (default) route table
-- Adjust the default security group
