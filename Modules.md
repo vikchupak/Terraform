@@ -19,7 +19,7 @@ Module files
 
 Import child module to root module
 
-```
+```hcl
 module "myapp-subnet" {
   # define module source
   source = "modules/subnet"
