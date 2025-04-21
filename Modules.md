@@ -22,7 +22,7 @@ Import child module to root module
 ```hcl
 module "myapp-subnet" {
   # define module source
-  source = "modules/subnet"
+  source = "./modules/subnet"
 
   # pass variable values to the child module from the root module variables
   subnet_cidr_block = var.subnet_cidr_block
