@@ -1,4 +1,5 @@
-Provisioners are for app config/management, which is, in general, against terraform philosophy.
+- Provisioners are for app config/management, which is, in general, against terraform philosophy.
+- Provisioners are last resort.
 
 # Provisioners
 - `local-exec`
