@@ -36,3 +36,13 @@ module "myapp-subnet" {
   default_route_table_id = aws_vpc.myapp-vpc.default_route_table_id
 }
 ```
+
+Access child module resources from root module
+```hcl
+subnet_id = module.myapp-subnet.subnet.id
+
+# In child module must be such output for this to work
+output "subnet" {
+  value = aws-subnet.myapp-subnet-1
+}
+```
