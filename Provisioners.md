@@ -1,5 +1,6 @@
 - Provisioners are for app config/management, which is, in general, against terraform philosophy.
 - Provisioners are last resort.
+- [Example](https://gitlab.com/twn-devops-bootcamp/latest/12-terraform/terraform-learn/-/blob/feature/provisioners/main.tf?ref_type=heads#L132)
 
 # Provisioners
 - `local-exec`
