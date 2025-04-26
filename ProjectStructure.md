@@ -12,7 +12,7 @@ terraform-project/
 ├── terraform.tfvars   # Values for variables (gitignore sensitive ones)
 ├── outputs.tf         # Output values
 ├── versions.tf        # Terraform and provider version constraints
-├── backend.tf         # Remote backend configuration (optional)
+├── backend.tf         # Remote backend configuration (optional). Remote central state.
 ├── modules/           # Reusable child modules (if used)
 │   └── <module-name>/
 │       ├── main.tf
