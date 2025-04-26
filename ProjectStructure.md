@@ -1,5 +1,7 @@
 # Project structure
 
+- https://developer.hashicorp.com/terraform/language/style#file-names
+
 Here's a typical **Terraform project structure** and common files:
 
 ```
