@@ -12,6 +12,9 @@ Module files
 
 ---
 
+- `root module` is root folder's main.tf
+- `child modules` are modules in modules folder and called from other configurations
+
 # Local modules from `./modules` folder
 
 - These are your own modules, stored inside your project folder.
@@ -23,10 +26,6 @@ module "vpc" {
   cidr_block = "10.0.0.0/16"
 }
 ```
-
-- `root module` is root folder's main.tf
-- `child modules` are modules in modules folder and called from other configurations
-
 ---
 
 Import child module to root module
