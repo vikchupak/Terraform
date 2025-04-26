@@ -3,6 +3,18 @@ Group logically related resources in modules
 - https://registry.terraform.io/browse/modules
 - https://gitlab.com/twn-devops-bootcamp/latest/12-terraform/terraform-learn/-/tree/feature/modules
 
+# Local modules from `./modules` folder
+
+- These are your own modules, stored inside your project folder.
+- You reference them with a local source path.
+
+```hcl
+module "vpc" {
+  source = "./modules/vpc"
+  cidr_block = "10.0.0.0/16"
+}
+```
+
 Module files
 - `main.tf` - Module’s main logic.
 - `providers.tf` (**only for root module** - best proctice to keep only on the root module. This is because provider settings (e.g., credentials, regions, or endpoints) are global to the Terraform configuration.
@@ -46,3 +58,20 @@ output "subnet" {
   value = aws-subnet.myapp-subnet-1
 }
 ```
+
+# Public modules installed from Terraform Registry
+
+- These are published modules from Terraform Registry.
+- You reference them with a remote source URL.
+
+```hcl
+module "vpc" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "~> 5.0"
+  cidr    = "10.0.0.0/16"
+}
+```
+
+- We can 'import' and use the modules inside main.tf file
+- Or we can organize things better to split modules into separate `.tf` files and keep them in the root folder
+  - Terraform will still auto-load all `.tf` files in the folder. No extra "import" needed.
